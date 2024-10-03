@@ -1,6 +1,9 @@
 import { readFile } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const targetFile = './files/fileToRead.txt';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const targetFile = join(__dirname, './files/fileToRead.txt');
 const errorMessage = 'FS operation failed';
 
 const read = async () => {

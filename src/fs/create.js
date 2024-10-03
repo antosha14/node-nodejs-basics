@@ -1,6 +1,9 @@
 import { open, writeFile } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const filePath = './files/fresh.txt';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const filePath = join(__dirname, './files/fresh.txt');
 const textContent = 'I am fresh and young';
 const errorMessage = 'FS operation failed';
 

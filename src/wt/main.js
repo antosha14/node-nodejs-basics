@@ -1,9 +1,12 @@
 import { cpus } from 'os';
 import { Worker } from 'worker_threads';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const workerFile = join(__dirname, './worker.js');
 
 const cpuCoreQuantity = cpus().length;
-const workerFile = './src/wt/worker.js';
-
 const results = [];
 
 const performCalculations = async () => {
